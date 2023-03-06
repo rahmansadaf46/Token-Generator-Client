@@ -48,7 +48,10 @@ function App() {
   };
   return (
     <div className="container">
-      <h2 className="header">Token Generator</h2>
+      <div>
+        <h2 className="header">Token Generator</h2>
+        <p>Get Random Token on: <a target="blank" href="https://token-generator-server.vercel.app/"><b>https://token-generator-server.vercel.app/</b></a></p>
+      </div>
       <form onSubmit={handleSubmit}>
         <label className="label">
           <b>Add Token: </b>
