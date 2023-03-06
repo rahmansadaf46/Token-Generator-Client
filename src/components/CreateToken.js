@@ -38,9 +38,10 @@ const CreateToken = () => {
         })
             .then((response) => response.json())
             .then((data) => {
-                let newFormData = tableData.filter(el => el.id !== id)
-                setTableData(newFormData);
-                setInputValue('');
+                if(data){
+                    let newFormData = tableData.filter(el => el.id !== id)
+                    setTableData(newFormData);
+                }
             })
             .catch((error) => console.error(error));
     };
