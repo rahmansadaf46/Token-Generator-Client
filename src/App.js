@@ -18,7 +18,6 @@ function App() {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log([...tableData, { id: data.insertedId, token: inputValue }])
         let newFormData = [...tableData, { id: data.insertedId, token: inputValue }]
         setTableData(newFormData);
         setInputValue('');
