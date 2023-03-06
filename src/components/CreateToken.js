@@ -46,8 +46,10 @@ const CreateToken = () => {
     };
     return (
         <div className="container">
-            <div>
-                <h2 className="header">Token Generator</h2>
+            <div className="header">
+                <h2 className="text-green">Token Generator</h2>
+                {tableData.length > 0 && <p><b>Active Token:</b> <b className="text-red">{tableData.length}</b></p>}
+                
             </div>
             <a href="/email" target="_blank"> <button className="button" >Get Email</button></a>
             <div>

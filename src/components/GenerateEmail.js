@@ -29,8 +29,8 @@ function GenerateEmail() {
     }
     return (
         <div className="container">
-            <div>
-                <h2 className="header">Email List</h2>
+            <div className="header">
+                <h2 className="text-green">Email List</h2>
                 <a href="/"> <button className="button" >Token List</button></a>
             </div>
             <table className="table" ref={tableRef}>

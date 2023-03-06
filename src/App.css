@@ -6,10 +6,17 @@
 }
 
 .header {
-  color: #4caf50;
   text-align: center;
 }
-
+.text-green{
+  color: #4caf50;
+}
+.text-red{
+  color: #ff0a0a;
+}
+.text-purple{
+  color: #7615c5;
+}
 .label {
   margin-right: 10px;
 }
