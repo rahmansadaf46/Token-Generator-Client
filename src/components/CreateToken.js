@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+const urlPrefix = process.env.REACT_APP_API_URL;
 const CreateToken = () => {
     const [inputValue, setInputValue] = useState('');
     const [tableData, setTableData] = useState([]);
@@ -10,7 +10,7 @@ const CreateToken = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('https://token-generator-server.vercel.app/addToken', {
+        fetch(urlPrefix+'/addToken', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ data: inputValue }),
@@ -24,7 +24,7 @@ const CreateToken = () => {
             .catch((error) => console.error(error));
     };
     useEffect(() => {
-        fetch('https://token-generator-server.vercel.app/tokens')
+        fetch(urlPrefix+'/tokens')
             .then((response) => response.json())
             .then((data) => {
                 setTableData(data.map(token => { return { id: token._id, token: token.token } }));
@@ -33,7 +33,7 @@ const CreateToken = () => {
     }, [])
 
     const handleDelete = (id) => {
-        fetch(`https://token-generator-server.vercel.app/deleteToken/${id}`, {
+        fetch(urlPrefix+`/deleteToken/${id}`, {
             method: 'DELETE'
         })
             .then((response) => response.json())
@@ -55,7 +55,7 @@ const CreateToken = () => {
             <a href="/email" target="_blank"> <button className="button" >Get Email</button></a>
             <div>
 
-                <p>Get Random Token on: <a target="blank" href="https://token-generator-server.vercel.app/"><b>https://token-generator-server.vercel.app/</b></a></p>
+                <p>Get Random Token on: <a target="blank" href={urlPrefix}><b>{urlPrefix}</b></a></p>
 
             </div>
 
