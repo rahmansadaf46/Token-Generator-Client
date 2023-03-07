@@ -1,3 +1,6 @@
+body{
+  background-color: rgba(238, 247, 250, 0.596)
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -7,6 +10,9 @@
 
 .header {
   text-align: center;
+}
+.header p{
+  font-size: 12px;
 }
 .text-green{
   color: #4caf50;
@@ -62,6 +68,7 @@
 .table td {
   border: 1px solid #ddd;
   padding: 8px;
+  background-color: #fff;
 }
 
 .table th {

@@ -7,7 +7,7 @@ import GenerateEmail from './components/GenerateEmail';
 function App() {
 
   return (
-    <div>
+    <div >
       <Routes>
         <Route path="/" element={<CreateToken />} />
         <Route path="/email" element={<GenerateEmail />} />

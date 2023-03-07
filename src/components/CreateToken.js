@@ -50,13 +50,8 @@ const CreateToken = () => {
             <div className="header">
                 <h2 className="text-green">Token Generator</h2>
                 {tableData.length > 0 && <p><b>Active Token:</b> <b className="text-red">{tableData.length}</b></p>}
-                
-            </div>
-            <a href="/email" target="_blank"> <button className="button" >Get Email</button></a>
-            <div>
-
+                <a href="/email" target="_blank"> <button className="button" >Get Email</button></a>
                 <p>Get Random Token on: <a target="blank" href={urlPrefix}><b>{urlPrefix}</b></a></p>
-
             </div>
 
             <form onSubmit={handleSubmit}>

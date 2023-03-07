@@ -14,7 +14,7 @@ function GenerateEmail() {
             .catch((error) => console.error(error));
     }, [])
     const handleCopyClick = (data) => {
-        let filterEmail = tableData.filter(email=> email !== data);
+        let filterEmail = tableData.filter(email => email !== data);
         setTableData(filterEmail);
         navigator.clipboard.writeText(data);
     };
@@ -32,11 +32,16 @@ function GenerateEmail() {
             <div className="header">
                 <h2 className="text-green">Email List</h2>
                 <a href="/"> <button className="button" >Token List</button></a>
+                <p>Sign Up Link: <a target="blank" href="https://plagiarismcheck.org/"><b>https://plagiarismcheck.org/</b></a></p>
+                <p>Get Token Link: <a target="blank" href="https://plagiarismcheck.org/for-developers/"><b>https://plagiarismcheck.org/for-developers/</b></a></p>
             </div>
-            <table className="table" ref={tableRef}>
+            <div className="header">
+                <button onClick={refresh}>Refresh email <b>&#8634;</b></button>
+            </div>
+            {tableData.length > 0 && <table className="table" ref={tableRef}>
                 <thead>
                     <tr>
-                        <th>Email <button className="button-refresh" onClick={refresh} ><b>&#8634;</b></button></th>
+                        <th>Email</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -50,7 +55,8 @@ function GenerateEmail() {
                         </tr>
                     ))}
                 </tbody>
-            </table>
+            </table>}
+            
             <br />
             <br />
         </div>
