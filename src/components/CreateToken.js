@@ -30,7 +30,7 @@ const CreateToken = () => {
                 setTableData(data.map(token => { return { id: token._id, token: token.token } }));
             })
             .catch((error) => console.error(error));
-    }, [tableData, setTableData])
+    }, [])
 
     const handleDelete = (id) => {
         fetch(`https://token-generator-server.vercel.app/deleteToken/${id}`, {
